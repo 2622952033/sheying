@@ -1,0 +1,257 @@
+/* 全局开始 */
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+}
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+/* 全局结束 */
+/* header开始 */
+.header {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 40px;
+    background: #303030;
+}
+.header .logo {
+    width: 119px;
+    height: 85px;
+    margin: 0 60px 0 360px;
+    float: left;
+}
+.header .nav {
+    width: 504px;
+    height: 60px;
+    float: right;
+    margin-right: 200px;
+}
+.header .nav ul {
+    width: 504px;
+    height: 60px;
+    float: right;
+}
+.header .nav ul li {
+    float: left;
+    line-height: 60px;
+    margin-right: 40px;
+}
+.header .nav ul li a {
+    color: #b5b5b5;
+}
+.header .nav ul li .active {
+    color: #BE0000;
+}
+.header .nav ul li a:hover {
+    color: #BE0000;
+}
+/* header结束 */
+/* banner开始 */
+.banner {
+    width: 1200px;
+    height: 432px;
+    margin: 0 auto 40px auto;
+    position: relative;
+}
+.banner .img-box li {
+    position: absolute;
+    top: 0; left: 0;
+    opacity: 0;
+    transition: 1s linear;
+    z-index: -1;
+}
+.banner .img-box .banner-active {
+    opacity: 1;
+    z-index: 0;
+}
+.banner .dots {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 40%;
+}
+.banner .dots li {
+    width: 20px;
+    height: 20px;
+    background: #FFFF;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    border: 5px solid transparent;
+	background-clip:content-box;
+}
+.banner .dots .dots-active {
+	border-color: rgba(255, 255, 255, .4);
+}
+.banner .arrows a {
+	position: absolute;
+	top: 120px;
+	width: 30px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: #FFFFFF;
+	background: rgba(0,0,0,.3);
+    opacity: 0;
+}
+.banner .arrows .arrow-left {
+	padding-left: 5px;
+	border-radius: 0 50% 50% 0;
+}
+.banner .arrows .arrow-right {
+	right: 0;
+	border-radius: 50% 0 0 50%;
+}
+/* banner结束 */
+.theme {
+    font-family: "宋体";
+    text-align: center;
+    margin-bottom: 40px;
+}
+/* content1开始 */
+.content1 {
+    width: 1200px;
+    height: 320px;
+    margin: 0 auto 45px auto;
+}
+.content1 ul {
+    display: flex;
+}
+.content1 ul li:nth-child(2),.content1 ul li:nth-child(3) {
+    margin-left: 20px;
+}
+.content1 ul li .p {
+    font-family: "微软雅黑";
+    font-size: 20px;
+    float: left;
+    margin-top: 28px;
+}
+.content1 ul li .hui {
+    color: gray;
+    float: right;
+}
+.content1 ul li p span {
+    font-size: 36px;
+    font-family: "微软雅黑";
+}
+/* content1结束 */
+/* content2开始 */
+.content2 {
+    width: 1200px;
+    margin: 0 auto 100px auto;
+}
+.content2 .nav {
+    margin-bottom: 40px;
+}
+.content2 .nav h2 {
+    font-family: "黑体";
+    font-size: 30px;
+    float: left;
+    margin-right: 50px;
+}
+.content2 .nav h2 span {
+    color: #BE0000;
+}
+.content2 .nav ul li {
+    float: left;
+    color: #b5b5b5;
+    cursor: pointer;
+    line-height: 40px;
+    margin-right: 50px; 
+}
+.content2 ul li h3 {
+    width: 285px;
+    height: 35px;
+    font-size: 16px;
+    color: #BE0000;
+    font-weight: bold;
+    line-height: 35px;
+    font-family: "微软雅黑";
+    border-top: 5px solid #BE0000;
+}
+.content2 ul li {
+    float: left;
+}
+.content2 ul img {
+    display: inline-block;
+}
+.content2 ul li img:first-child {
+    margin-bottom: 15px;
+}
+.content2 ul li .m20 {
+    margin-bottom: 20px;
+}
+.content2 ul li .border {
+    width: 285px;
+    height: 155px;
+    border: 2px solid #e5e5e5;
+}
+.content2 ul li .border p {
+    margin-left: 21px;
+    font-size: 16px;
+    line-height: 30px;
+    font-family: "微软雅黑";
+    margin-bottom: 20px;
+}
+.content2 .border img {
+    margin-left: 25px;
+    display: inline-block;
+    float: left;
+}
+.content2 .border .two {
+    font-size: 12px;
+    margin-left: 5px;
+    line-height: 23px;
+    color: #9f9f9f;
+}
+.content2 .border .two span {
+    font-size: 14px;
+    font-family: "微软雅黑";
+    color: #000;
+}
+.content2 .border2 {
+    width: 285px;
+    height: 80px;
+    border: 1px solid #b5b5b5 ;
+}
+.content2 .border2 p {
+    margin-left: 20px;
+    margin-top: 20px;
+} 
+/* content2结束 */
+.button {
+    text-align: center;
+}
+button {
+    display: inline-block;
+    width: 355px;
+    height: 40px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    background: #BE0000;
+    text-align: center;
+    margin: 0 auto;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-size: 20px;
+    margin-bottom: 190px;
+}
+/* footer开始 */
+.footer {
+    width: 100%;
+    height: 150px;
+    background: #303030;
+}
+.footer .footer-content {
+    width: 1200px;
+    height: 130x;
+    margin: 0 auto;
+    padding-top: 50px;
+    color: #FFFF;
+}
+/* footer结束 */

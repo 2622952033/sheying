@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <title>摄影</title>
+</head>
+<body>
+    <!-- header开始 -->
+    <div class="header">
+        <div class="logo">
+           <a href="index.html">
+               <img src="img/logo.png" alt="">
+            </a>
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#" class="active">结婚咨询</a></li>
+                <li><a href="#">新娘日记</a></li>
+                <li><a href="#">新娘评价</a></li>
+                <li><a href="#">活动体验会</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- header结束 -->
+    <!-- banner开始 -->
+    <div class="banner" id="banner">
+        <!-- 图片开始 -->
+        <ul class="img-box">
+            <li class="banner-active"><img src="img/banner.png" alt=""></li>
+            <li><img src="img/banner.png" alt=""></li>
+            <li><img src="img/banner.png" alt=""></li>
+            <li><img src="img/banner.png" alt=""></li>
+            <li><img src="img/banner.png" alt=""></li>
+            <li><img src="img/banner.png" alt=""></li>
+        </ul>
+        <!-- 图片结束 -->
+        <!-- 点开始 -->
+        <ul class="dots">
+            <li class="dots-active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <!-- 点结束 -->
+        <!-- 箭头开始 -->
+        <div class="arrows">
+            <a href="javascript:;" class="arrow-left">&lt;</a>
+            <a href="javascript:;" class="arrow-right">&gt;</a>
+        </div>
+        <!-- 箭头结束 -->
+    </div>
+    <!-- script开始 -->
+    <script>
+        var banner =document.getElementById('banner');//获取banner区域
+        var banner =document.getElementById('banner');//获取banner区域
+        var imgBox =document.getElementsByClassName('img-box')[0];//图片区域
+        var imgs =imgBox.getElementsByTagName('li');//图片
+        var dotBox =document.getElementsByClassName('dots')[0];//按钮区域
+        var dots =dotBox.getElementsByTagName('li');//按钮
+        var arrowBox =banner.getElementsByClassName('arrows')[0];//箭头区域
+        var arrows =arrowBox.getElementsByTagName('a');//箭头
+        var arrowLeft =arrows[0];//左箭头
+        var arrowRight =arrows[1];//右箭头
+        var dotNum =dots.length;//按钮的数量
+        var index =0;//当前图片从零开始
+        t = null;//定时器全局变量
+        var speed =2;//q切换速度 
+        function showImg(m,n) {
+            imgs[m].removeAttribute('class');
+            imgs[n].className ='banner-active';
+        }   
+        function showBtn(m,n) {
+            dots[m].removeAttribute('class');
+            dots[n].className ='dots-active';
+        }
+        for (var i =0;i<dotNum;i++) {
+            dots[i].idx =i;
+            dots[i].onmouseover =function () {
+                var oldIndex =index;
+                index =this.idx;
+                showImg(oldIndex,index);
+                showBtn(oldIndex,index);
+            }
+        }
+        arrowLeft.onclick =function () {
+            var oldIndex =index;
+            index =index<dotNum-1?index+1:index=0;
+            showImg(oldIndex,index);
+            showBtn(oldIndex,index);
+        }
+        arrowRight.onclick=function(){
+            var oldIndex =index;
+            index =index<dotNum-1?index+1:index=0;
+            showImg(oldIndex,index)
+            showBtn(oldIndex,index)
+        }
+        banner.onmouseover =function () {
+            clearInterval(t);
+        }
+        banner.onmouseout =function () {
+            t =setInterval(arrowRight.onclick,speed*1000);
+        }
+    </script>
+    <!-- script结束 -->
+    <!-- banner结束 -->
+    <h3 class="theme">活动·主题</h3>
+    <!-- content1开始 -->
+    <div class="content1">
+        <ul>
+            <li>
+                <img src="img/content1.png" alt="">
+                <p class="p">格调生活馆</p>
+                <p class="hui"><span>N.1</span><br>2014/08</p>
+            </li>
+            <li>
+                <img src="img/content2.png" alt="">
+                <p class="p">锐家客户真实幸福录</p>
+                <p class="hui"><span>N.1</span><br>2014/08</p>
+            </li>
+            <li>
+                <img src="img/content3.png" alt="">
+                <p class="p">古韵新玩-锐摄影客片欣赏</p>
+                <p class="hui"><span>N.1</span><br>2014/08</p>
+            </li>
+        </ul>
+    </div>
+    <!-- content1结束 -->
+    <!-- content2开始 -->
+    <div class="content2">
+        <div class="nav clearfix">
+            <h2><span>大家</span>都在看</h2>
+            <ul>
+                <li>爱在杭州</li>
+                <li>四季花海</li>
+                <li>西湖之韵</li>
+                <li>纯爱系列</li>
+                <li>浪漫温馨</li>
+                <li>梦幻小情歌</li>
+                <li>爱在杭州</li>
+                <li>四季花海</li>
+            </ul>
+        </div>
+            <ul class="clearfix">
+                <li>
+                    <h3>精彩专题</h3>
+                    <img src="img/pic1.png" alt="" class="m20">
+                    <br>
+                    <img src="img/pic5.png" alt="" class="m20">
+                    <div class="border clearfix">
+                        <p>超唯美搞怪婚纱（楼先生/颜女士）</p>
+                        <img src="img/touxiang.png" alt="" class="clearfix">
+                        <p class="two clearfix"><span>Amy</span><br>这个婚纱照拍的真是不错啦！锐摄影工作室也是我们从导航上看到的。</p>
+                    </div>
+                    
+                </li>
+                <li>
+                    <img src="img/pic2.png" alt="">
+                    <div class="border clearfix">
+                        <p>超唯美搞怪婚纱（楼先生/颜女士）</p>
+                        <img src="img/touxiang.png" alt="" class="clearfix">
+                        <p class="two clearfix"><span>Amy</span><br>这个婚纱照拍的真是不错啦！锐摄影工作室也是我们从导航上看到的。</p>
+                    </div>
+                    <img src="img/pic6.png" alt="" class="p6">
+                    <div class="border2 clearfix">
+                        <p>超唯美搞怪婚纱（楼先生/颜女士）</p>
+                    </div>
+                </li>
+                <li>
+                        <img src="img/pic3.png" alt="">
+                        <div class="border clearfix">
+                            <p>超唯美搞怪婚纱（楼先生/颜女士）</p>
+                            <img src="img/touxiang.png" alt="" class="clearfix">
+                            <p class="two clearfix"><span>Amy</span><br>这个婚纱照拍的真是不错啦！锐摄影工作室也是我们从导航上看到的。</p>
+                        </div>
+                        <img src="img/pic7.png" alt="" class="p6">
+                        <div class="border2 clearfix">
+                            <p>超唯美搞怪婚纱（楼先生/颜女士）</p>
+                        </div>
+                </li>
+                <li>
+                        <img src="img/pic4.png" alt="">
+                        <div class="border clearfix">
+                            <p>超唯美搞怪婚纱（楼先生/颜女士）</p>
+                            <img src="img/touxiang.png" alt="" class="clearfix">
+                            <p class="two clearfix"><span>Amy</span><br>这个婚纱照拍的真是不错啦！锐摄影工作室也是我们从导航上看到的。</p>
+                        </div>
+                        <img src="img/pic8.png" alt="" class="p6">
+                        <div class="border2 clearfix">
+                            <p>超唯美搞怪婚纱（楼先生/颜女士）</p>
+                        </div>
+                </li>
+            </ul> 
+            
+    </div>
+    <!-- content2结束 -->
+    <a href="#"><p class="button"><button>浏览更多</button></p></a>
+    <!-- footer开始 -->
+    <div class="footer">
+        <div class="footer-content">
+           <p>版权所有 © 2012-2014 杭州彬锐文化创意有限公司 鄂ICP备12008691号 
+            CREATIVE & IDEAS DESIGN BY BIKS POWERED BY C&I SYSTEM</p>
+        </div>
+    </div>
+    <!-- footer结束 -->
+</body>
+</html>
